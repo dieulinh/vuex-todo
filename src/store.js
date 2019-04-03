@@ -37,7 +37,7 @@ export default new Vuex.Store({
     addItem({commit}, item) {
       commit('addItem', {name: item, done: false});
     },
-    edit({commit}, { item, name}) {
+    editItem({commit}, { item, name}) {
       commit('editItem', {item, name});
     },
     toggleItem({commit}, item) {
