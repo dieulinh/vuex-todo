@@ -5,20 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    item: {},
     items: [
-      {
-        name: 'Milk',
-        done: false
-      },
-      {
-        name: 'Bread',
-        done: true
-      },
-      {
-        name: 'Cake',
-        done: false
-      }
+      
     ]
   },
   mutations: {
@@ -31,9 +19,20 @@ export default new Vuex.Store({
     },
     removeItem(state, item) {
       state.items.splice(state.items.indexOf(item), 1);
+    },
+    fetchTodo(state, items) {
+      state.items = items;
     }
   },
   actions: {
+    fetchTodo({commit}) {
+      let response = {
+        data: [
+          {name: 'milk', done: false}
+        ]
+      }
+      commit('fetchTodo', response.data);
+    },
     addItem({commit}, item) {
       commit('addItem', {name: item, done: false});
     },

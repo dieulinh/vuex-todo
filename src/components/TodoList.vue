@@ -51,8 +51,11 @@ export default {
       'items'
     ]),
   },
+  created() {
+    this.fetchTodo();
+  },
   methods: {
-    ...mapActions(['addItem']),
+    ...mapActions(['addItem', 'fetchTodo']),
     async onSubmit() {
       const isValid = await this.$validator.validateAll();
       if (isValid) {
