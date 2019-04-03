@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-jumbotron bg-variant="info" text-variant="white">
+      <template slot="header">
+        <b-container>
+          Vue Todo App
+        </b-container>
+      </template>
+      <template slot="lead">
+        <b-container>Built using Bootstrap-Vue</b-container>
+      </template>
+
+    </b-jumbotron>
+    <b-container>
+      <div class="todo-page">
+        <h2>Shopping List</h2>
+        <hr/>
+        <TodoList />
+      </div>
+    </b-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from './components/TodoList.vue'
 
 export default {
-  name: 'app',
+  name: 'TodoView',
   components: {
-    HelloWorld
+    TodoList
   }
 }
 </script>
